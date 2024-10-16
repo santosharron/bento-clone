@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "install:all": "npm install && cd server && npm install",
     "dev": "next dev -p 3001",
     "server": "cd server && npm run start",
     "dev:all": "concurrently \"npm run dev\" \"npm run server\"",
