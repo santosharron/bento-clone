@@ -144,7 +144,7 @@ export default function LandingPage() {
   );
 }
 
-const HeroSection = React.forwardRef((ref) => {
+const HeroSection = React.forwardRef((props, ref) => {
   return (
     <section
       ref={ref}
@@ -190,7 +190,7 @@ const HeroSection = React.forwardRef((ref) => {
   );
 });
 
-const FeaturesSection = React.forwardRef((ref) => {
+const FeaturesSection = React.forwardRef((props, ref) => {
   const features = [
     {
       icon: UsersIcon,
@@ -239,7 +239,7 @@ const FeaturesSection = React.forwardRef((ref) => {
   );
 });
 
-const TestimonialsSection = React.forwardRef((ref) => {
+const TestimonialsSection = React.forwardRef((props, ref) => {
   const testimonials = [
     {
       quote:
@@ -297,7 +297,7 @@ const TestimonialsSection = React.forwardRef((ref) => {
   );
 });
 
-const CTASection = React.forwardRef((ref) => {
+const CTASection = React.forwardRef((props, ref) => {
   return (
     <section
       ref={ref}
