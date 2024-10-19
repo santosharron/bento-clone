@@ -33,6 +33,7 @@ app.use(helmet());
 app.use(
   cors({
     origin: [
+      "https://bento-clone-mu.vercel.app",
       process.env.ORIGIN_1,
       process.env.ORIGIN_2,
       process.env.ORIGIN_3,
