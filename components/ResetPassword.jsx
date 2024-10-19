@@ -46,7 +46,7 @@ const ResetPassword = ({ email, setEmail, nextPanel }) => {
         Reset your password
       </h1>
       <p className="mt-[1rem] font-normal text-[20px] leading-9 text-[#6c6c6c]">
-        Enter your email address and we'll send you an OTP to reset your
+        Enter your email address and we&apos;ll send you an OTP to reset your
         password.
       </p>
       <form className="w-full" onSubmit={handleSubmit}>

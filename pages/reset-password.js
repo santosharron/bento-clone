@@ -1,4 +1,3 @@
-import ResetPassword from '@/components/ResetPassword';
 import SignupAnimation from '@/components/SignupAnimation';
 import ResetForm from '@/components/ResetForm';
 

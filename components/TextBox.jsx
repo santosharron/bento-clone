@@ -11,7 +11,6 @@ import { useSelector } from 'react-redux';
 const TextBox = ({ item, USERNAME }) => {
   const { isSameUser } = useSelector((state) => state.ui);
   const dispatch = useDispatch();
-  const router = useRouter();
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
   const [width, setWidth] = useState(item.width);

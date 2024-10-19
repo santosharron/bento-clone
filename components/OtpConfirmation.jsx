@@ -29,7 +29,7 @@ const OtpConfirmation = ({ otp, setOtp, nextPanel, email }) => {
     <React.Fragment>
       <h1 className="font-bold text-[32px] leading-[40px]">Enter OTP</h1>
       <p className="mt-[1rem] font-normal text-[20px] leading-9 text-[#6c6c6c]">
-        We've sent a 6-digit code to your email. Please enter it below.
+        We&apos;ve sent a 6-digit code to your email. Please enter it below.
       </p>
       <form className="w-full" onSubmit={handleSubmit}>
         <div className="mt-[5rem] rounded-xl w-full ">

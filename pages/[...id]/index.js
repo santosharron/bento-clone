@@ -78,7 +78,6 @@ export default function Home({ }) {
     (state) => state.profile
   );
   const [isSuggestionsOpen, setIsSuggestionsOpen] = useState(false);
-  const [isLogoutOpen, setIsLogoutOpen] = useState(false);
   const { isSameUser } = useSelector((state) => state.ui);
   const [isLaptop, setIsLaptop] = useState(true);
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
@@ -201,12 +200,12 @@ export default function Home({ }) {
   const addSuggestions = async () => {
     if (!USERNAME) return;
     try {
-      const res = await axiosWithToken.put(
-        `${API_URL}/profile/replace/${USERNAME}`,
-        {
-          profileDetails: [...profileDetails, ...InitialData],
-        }
-      );
+      // const res = await axiosWithToken.put(
+      //   `${API_URL}/profile/replace/${USERNAME}`,
+      //   {
+      //     profileDetails: [...profileDetails, ...InitialData],
+      //   }
+      // );
       dispatch(
         profileActions.setProfileDetails([...profileDetails, ...InitialData])
       );
@@ -422,7 +421,6 @@ export default function Home({ }) {
   };
 
   const handleLogout = () => {
-    const res = axiosWithToken.get(`${API_URL}/auth/signout`);
     Cookies.remove('jwt');
     dispatch(uiActions.setSameUser(false));
   };
@@ -610,7 +608,7 @@ export default function Home({ }) {
             <div className="xl:max-w-[820px]  xl:min-w-[820px] xl:w-[820px] px-6 pb-6 pt-12 xl:p-0 xl:min-h-[calc(100vh-8rem)] w-full h-full flex">
               <div>
                 <div className=" flex  gap-[24px] xl:gap-[39px]  flex-wrap last:pb-[6rem]">
-                  {profileDetails.map((item, index) => (
+                  {profileDetails.map((item) => (
                     <div key={item._id}>
                       <div className="w-full">
                         {item.type === 'socialLink' && (

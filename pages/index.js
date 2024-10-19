@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -144,7 +144,7 @@ export default function LandingPage() {
   );
 }
 
-const HeroSection = React.forwardRef((props, ref) => {
+const HeroSection = React.forwardRef((ref) => {
   return (
     <section
       ref={ref}
@@ -190,7 +190,7 @@ const HeroSection = React.forwardRef((props, ref) => {
   );
 });
 
-const FeaturesSection = React.forwardRef((props, ref) => {
+const FeaturesSection = React.forwardRef((ref) => {
   const features = [
     {
       icon: UsersIcon,
@@ -239,7 +239,7 @@ const FeaturesSection = React.forwardRef((props, ref) => {
   );
 });
 
-const TestimonialsSection = React.forwardRef((props, ref) => {
+const TestimonialsSection = React.forwardRef((ref) => {
   const testimonials = [
     {
       quote:
@@ -272,7 +272,7 @@ const TestimonialsSection = React.forwardRef((props, ref) => {
               key={index}
               className="testimonial-card bg-white rounded-2xl p-8 space-y-6 shadow-lg">
               <p className="text-xl text-gray-700 italic">
-                "{testimonial.quote}"
+              &quot;{testimonial.quote}&quot;
               </p>
               <div className="flex items-center space-x-4">
                 <Image
@@ -297,7 +297,7 @@ const TestimonialsSection = React.forwardRef((props, ref) => {
   );
 });
 
-const CTASection = React.forwardRef((props, ref) => {
+const CTASection = React.forwardRef((ref) => {
   return (
     <section
       ref={ref}

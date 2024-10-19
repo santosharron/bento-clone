@@ -1,24 +1,14 @@
 import React from 'react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useRouter } from 'next/router';
 import { Toaster } from 'react-hot-toast';
-import { useDispatch } from 'react-redux';
 import ResetPassword from './ResetPassword';
 import OtpConfirmation from './OtpConfirmation';
 import SetNewPassword from './SetNewPassword';
 
 const ResetForm = () => {
-  const router = useRouter();
-  const dispatch = useDispatch();
 
-  const API_URL = process.env.NEXT_PUBLIC_API_URL;
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-
-  const [showPassword, setShowPassword1] = useState(false);
-
   const [otp, setOtp] = useState('');
 
   const [index, setIndex] = useState(0);
