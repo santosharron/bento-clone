@@ -33,7 +33,7 @@ export default function LandingPage() {
           property="og:description"
           content="Bento - Showcase your profile with custom links. Increase engagement by up to 60% with our powerful link-in-bio platform."
         />
-        <meta property="og:url" content="https://bento-clone-app.vercel.app/" />
+        <meta property="og:url" content="https://bento-clone-mu.vercel.app/" />
         <meta
           name="twitter:title"
           content="Bento - Elevate Your Online Presence"
