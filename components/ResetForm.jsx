@@ -1,14 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
-import axios from 'axios';
-import SignUpMail from '@/components/SignUpMail';
-import SignupLink from '@/components/SignupLink';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/router';
-import toast, { Toaster } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
-import { uiActions } from '@/store/ui-slice';
-import Cookies from 'js-cookie';
 import ResetPassword from './ResetPassword';
 import OtpConfirmation from './OtpConfirmation';
 import SetNewPassword from './SetNewPassword';

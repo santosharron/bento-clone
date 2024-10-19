@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { AiOutlineDelete } from 'react-icons/ai';
 import { useDispatch } from 'react-redux';
 import { profileActions } from '@/store/profile-slice';
 import { axiosWithToken } from '@/utils/axiosjwt';

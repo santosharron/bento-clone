@@ -8,7 +8,6 @@ import { useDispatch } from 'react-redux';
 import { profileActions } from '@/store/profile-slice';
 import { uiActions } from '@/store/ui-slice';
 import Cookies from 'js-cookie';
-import { useEffect } from 'react';
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);

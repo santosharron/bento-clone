@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaGoogle } from 'react-icons/fa';
 import { HiArrowNarrowLeft } from 'react-icons/hi';
-import toast, { Toaster } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
 
 export default function SignUpMail({
   email,
