@@ -1,9 +1,8 @@
 const app = require('./app');
 const { connectMongo } = require('./services/mongo');
 
-const port = process.env.PORT || 8000;
+// Connect to MongoDB when the serverless function is called
+connectMongo();
 
-app.listen(port, () => {
-  connectMongo();
-  console.log(`Server is running on port ${port}`);
-});
+// Export the Express app for Vercel
+module.exports = app;
