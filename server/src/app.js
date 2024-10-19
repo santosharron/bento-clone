@@ -40,6 +40,8 @@ app.use(
       process.env.ORIGIN_4,
     ],
     credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
+    allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
 
