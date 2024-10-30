@@ -16,7 +16,6 @@ import instagram from '@/assets/instagram.svg';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function LandingPage() {
-  const heroRef = useRef(null);
   return (
     <div className="overflow-x-hidden">
       <Head>
