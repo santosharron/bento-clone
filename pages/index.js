@@ -13,6 +13,9 @@ import twitter from '@/assets/twitter.svg';
 import youtube from '@/assets/youtube.svg';
 import instagram from '@/assets/instagram.svg';
 
+// Introducing a missing or incorrect import for 'OrigamiIcon'
+import OrigamiIcon from '@/components/MissingIcon'; // This will cause an error because `MissingIcon` doesn't exist.
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function LandingPage() {
@@ -58,6 +61,7 @@ const HeroSection = React.forwardRef((props, ref) => {
       className="relative w-full bg-gradient-to-b from-[#F9FAFB] to-white py-20 md:py-32 overflow-hidden">
       <div className="container mx-auto flex flex-col items-center gap-8 px-4 md:px-8 justify-center">
         <span className="flex flex-col items-center gap-2">
+          {/* This will throw an error because OrigamiIcon doesn't exist */}
           <OrigamiIcon className="h-12 w-12 text-gray-900" />
           <span className="text-2xl font-semibold text-gray-900">Bento</span>
         </span>
@@ -99,36 +103,7 @@ const HeroSection = React.forwardRef((props, ref) => {
 
 HeroSection.displayName = 'HeroSection';
 
-
-
-function FloatingIcons() {
-  const icons = [
-    { src: coffee, alt: 'Coffee', className: 'top-5 left-[8%]' },
-    { src: dribble, alt: 'Dribble', className: 'top-[10%] left-[2%]' },
-    { src: github, alt: 'GitHub', className: 'top-[20%] left-[15%]' },
-    { src: linkedin, alt: 'LinkedIn', className: 'bottom-[10%] left-[5%]' },
-    { src: twitter, alt: 'Twitter', className: 'bottom-[20%] left-[20%]' },
-    { src: youtube, alt: 'YouTube', className: 'bottom-[20%] right-[20%]' },
-    { src: instagram, alt: 'Instagram', className: 'bottom-[10%] right-[5%]' },
-    { src: coffee, alt: 'Coffee', className: 'top-[20%] right-[15%]' },
-    { src: github, alt: 'GitHub', className: 'top-[10%] right-[2%]' },
-    { src: dribble, alt: 'Dribble', className: 'top-5 right-[8%]' },
-  ];
-
-  return (
-    <div className="hidden md:block absolute inset-0 overflow-hidden pointer-events-none">
-      {icons.map((icon, index) => (
-        <Image
-          key={index}
-          className={`absolute w-8 h-8 md:w-12 md:h-12 animate-float  ${icon.className}`}
-          src={icon.src}
-          alt={icon.alt}
-        />
-      ))}
-    </div>
-  );
-}
-
+// The error is triggered here
 function OrigamiIcon(props) {
   return (
     <svg
