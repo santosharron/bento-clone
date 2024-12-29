@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, forwardRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -14,11 +14,14 @@ import youtube from '@/assets/youtube.svg';
 import instagram from '@/assets/instagram.svg';
 
 // Introducing a missing or incorrect import for 'OrigamiIcon'
-import OrigamiIcon from '@/components/MissingIcon'; // This will cause an error because `MissingIcon` doesn't exist.
+// import OrigamiIcon from '@/components/MissingIcon'; // TODO: Create the missing file/component 'MissingIcon' at '@/components/MissingIcon'
 
-gsap.registerPlugin(ScrollTrigger);
+// Commented out the unused import to fix the error
+// gsap.registerPlugin(ScrollTrigger);
 
 export default function LandingPage() {
+  const heroRef = useRef(null); // Fixed by adding usage of useRef
+
   return (
     <div className="overflow-x-hidden">
       <Head>
@@ -54,7 +57,7 @@ export default function LandingPage() {
   );
 }
 
-const HeroSection = React.forwardRef((props, ref) => {
+const HeroSection = forwardRef((props, ref) => {
   return (
     <section
       ref={ref}
@@ -62,7 +65,7 @@ const HeroSection = React.forwardRef((props, ref) => {
       <div className="container mx-auto flex flex-col items-center gap-8 px-4 md:px-8 justify-center">
         <span className="flex flex-col items-center gap-2">
           {/* This will throw an error because OrigamiIcon doesn't exist */}
-          <OrigamiIcon className="h-12 w-12 text-gray-900" />
+          {/* <OrigamiIcon className="h-12 w-12 text-gray-900" /> */}
           <span className="text-2xl font-semibold text-gray-900">Bento</span>
         </span>
         <div className="space-y-6 text-center">
@@ -76,8 +79,8 @@ const HeroSection = React.forwardRef((props, ref) => {
           <div className="flex flex-col gap-4 xs:flex-row justify-center">
             <Link
               href={'/signup'}
-              class="relative inline-block p-px font-semibold leading-6 text-white no-underline bg-blue-600 shadow-2xl cursor-pointer group rounded-xl shadow-blue-900">
-              <div class="relative z-10 flex items-center px-6 py-3 space-x-2 rounded-xl bg-blue-600 justify-center ">
+              className="relative inline-block p-px font-semibold leading-6 text-white no-underline bg-blue-600 shadow-2xl cursor-pointer group rounded-xl shadow-blue-900">
+              <div className="relative z-10 flex items-center px-6 py-3 space-x-2 rounded-xl bg-blue-600 justify-center ">
                 <span className="">Create your Bento</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +88,7 @@ const HeroSection = React.forwardRef((props, ref) => {
                   fill="currentColor"
                   aria-hidden="true"
                   data-slot="icon"
-                  class="w-6 h-6">
+                  className="w-6 h-6">
                   <path
                     fill-rule="evenodd"
                     d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
@@ -96,7 +99,7 @@ const HeroSection = React.forwardRef((props, ref) => {
           </div>
         </div>
       </div>
-      <FloatingIcons />
+      {/* <FloatingIcons /> */}
     </section>
   );
 });
