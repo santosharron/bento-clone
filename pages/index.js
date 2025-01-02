@@ -13,6 +13,7 @@ import twitter from '@/assets/twitter.svg';
 import youtube from '@/assets/youtube.svg';
 import instagram from '@/assets/instagram.svg';
 
+//EXAMPLE
 // Introducing a missing or incorrect import for 'OrigamiIcon'
 import OrigamiIcon from '@/components/MissingIcon'; // This will cause an error because `MissingIcon` doesn't exist.
 
