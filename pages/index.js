@@ -13,12 +13,10 @@ import twitter from '@/assets/twitter.svg';
 import youtube from '@/assets/youtube.svg';
 import instagram from '@/assets/instagram.svg';
 
-// Introducing a missing or incorrect import for 'OrigamiIcon'
-import OrigamiIcon from '@/components/MissingIcon'; // This will cause an error because `MissingIcon` doesn't exist.
-
 gsap.registerPlugin(ScrollTrigger);
 
 export default function LandingPage() {
+  const heroRef = useRef(null);
   return (
     <div className="overflow-x-hidden">
       <Head>
@@ -61,7 +59,6 @@ const HeroSection = React.forwardRef((props, ref) => {
       className="relative w-full bg-gradient-to-b from-[#F9FAFB] to-white py-20 md:py-32 overflow-hidden">
       <div className="container mx-auto flex flex-col items-center gap-8 px-4 md:px-8 justify-center">
         <span className="flex flex-col items-center gap-2">
-          {/* This will throw an error because OrigamiIcon doesn't exist */}
           <OrigamiIcon className="h-12 w-12 text-gray-900" />
           <span className="text-2xl font-semibold text-gray-900">Bento</span>
         </span>
@@ -96,14 +93,13 @@ const HeroSection = React.forwardRef((props, ref) => {
           </div>
         </div>
       </div>
-      <FloatingIcons />
+      {/* TODO: Create the missing file/component 'FloatingIcons' at '@/components/FloatingIcons' */}
     </section>
   );
 });
 
 HeroSection.displayName = 'HeroSection';
 
-// The error is triggered here
 function OrigamiIcon(props) {
   return (
     <svg
