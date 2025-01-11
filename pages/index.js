@@ -13,12 +13,11 @@ import twitter from '@/assets/twitter.svg';
 import youtube from '@/assets/youtube.svg';
 import instagram from '@/assets/instagram.svg';
 
-// Introducing a missing or incorrect import for 'OrigamiIcon'
-import OrigamiIcon from '@/components/MissingIcon'; // This will cause an error because `MissingIcon` doesn't exist.
-
 gsap.registerPlugin(ScrollTrigger);
 
 export default function LandingPage() {
+  const heroRef = useRef(null);
+
   return (
     <div className="overflow-x-hidden">
       <Head>
@@ -61,8 +60,6 @@ const HeroSection = React.forwardRef((props, ref) => {
       className="relative w-full bg-gradient-to-b from-[#F9FAFB] to-white py-20 md:py-32 overflow-hidden">
       <div className="container mx-auto flex flex-col items-center gap-8 px-4 md:px-8 justify-center">
         <span className="flex flex-col items-center gap-2">
-          {/* This will throw an error because OrigamiIcon doesn't exist */}
-          <OrigamiIcon className="h-12 w-12 text-gray-900" />
           <span className="text-2xl font-semibold text-gray-900">Bento</span>
         </span>
         <div className="space-y-6 text-center">
@@ -96,30 +93,8 @@ const HeroSection = React.forwardRef((props, ref) => {
           </div>
         </div>
       </div>
-      <FloatingIcons />
     </section>
   );
 });
 
 HeroSection.displayName = 'HeroSection';
-
-// The error is triggered here
-function OrigamiIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round">
-      <path d="M12 12V4a1 1 0 0 1 1-1h6.297a1 1 0 0 1 .651 1.759l-4.696 4.025" />
-      <path d="m12 21-7.414-7.414A2 2 0 0 1 4 12.172V6.415a1.002 1.002 0 0 1 1.707-.707L20 20.009" />
-      <path d="m12.214 3.381 8.414 14.966a1 1 0 0 1-.167 1.199l-1.168 1.163a1 1 0 0 1-.706.291H6.351a1 1 0 0 1-.625-.219L3.25 18.8a1 1 0 0 1 .631-1.781l4.165.027" />
-    </svg>
-  );
-}
